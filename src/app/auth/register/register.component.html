@@ -1,0 +1,29 @@
+<form [formGroup]="form">
+    <div class="form-group py-1">
+        <label class="form-label mb-0">Usuario</label>
+        <input class="form-control" type="text" formControlName="usuario">
+        <div class="valid-feedback">
+            Looks good!
+        </div>
+    </div>
+    <div class="form-group py-1">
+        <label class="form-label mb-0">Correo</label>
+        <input [ngClass]="'form-control'" [class.is-invalid]="(email!.invalid) == true && (isSubmitted$ | async)" type="email" formControlName="email">
+        <div *ngIf="email!.invalid && (isSubmitted$ | async)" class="message-block">
+            <p *ngIf="email!.errors?.['email']" class="error-message mb-0 form-error text-danger small">
+                Correo tiene mal formato
+            </p>
+            <p *ngIf="email!.errors?.['required']" class="error-message mb-0 form-error text-danger small">
+                Correo es requerido
+            </p>            
+        </div>
+    </div>
+    <div class="form-group py-1">
+        <label class="form-label mb-0">Contraseña</label>
+        <input class="form-control" autocomplete="on" type="password" formControlName="password">
+    </div>
+    <div class="form-group py-1">
+        <label class="form-label mb-0">Repetir Contraseña</label>
+        <input class="form-control" autocomplete="on" type="password" formControlName="confirmPassword">
+    </div>
+</form> 

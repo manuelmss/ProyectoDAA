@@ -1,0 +1,28 @@
+mat-grid-tile.promart-block {
+    background-color: #FF6E00;
+}
+
+::ng-deep.router{
+    > ::ng-deep.mat-grid-tile-content {
+       display: block !important;
+    }
+}
+
+.content-login {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.w-80 {
+    width: 80% !important;
+}
+
+::ng-deep.mat-card-header-text {
+    margin: 0 !important;
+}
+
+::ng-deep .mat-card{
+    border: 1px solid #ced4da
+}

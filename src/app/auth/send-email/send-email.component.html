@@ -1,0 +1,11 @@
+<form [formGroup]="form">
+    <div class="form-group py-1">
+        <label class="form-label mb-0">Correo</label>
+        <div class="input-group">
+            <input class="form-control" type="email" formControlName="email">
+            <button class="btn btn-primary input-group-text" (click)="searchEmail()">
+                <i class="fas fa-search"></i>
+            </button>
+        </div>
+    </div>
+</form> 

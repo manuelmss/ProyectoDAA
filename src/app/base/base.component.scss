@@ -1,0 +1,52 @@
+:host {
+    display: block;
+}
+::ng-deep .mat-toolbar {
+    height: 45px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background-color: #FF6E00 !important;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+
+
+.btn:focus {
+    outline: 0;
+    box-shadow: none;
+}
+.btn {
+    margin: 0;
+    padding: 0;
+    &:hover {
+        box-shadow: none;
+      }
+}
+.custom-position {
+    position: absolute;
+    right: 0;
+    color: #FF6E00;
+    margin-right: 0.8em;
+    z-index: 10;
+    margin-top: 0.4em;
+}
+
+.icon-display {
+    transform: scale(1.1);
+ }
+:host{
+    background: #F6F6F6;
+}
+
+::ng-deep.mat-badge-content {
+    width: 15px !important;
+    height: 15px !important;
+    line-height: 15px !important;
+    font-size: 9px !important;
+    top: -5px !important;
+    background-color: black;
+  }

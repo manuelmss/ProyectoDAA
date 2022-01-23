@@ -1,0 +1,63 @@
+
+<mat-grid-list cols="2" rowHeight="100vh" gutterSize="5px">
+    <mat-grid-tile class="promart-block">
+        <img [src]="'assets/img/promart.png'">
+    </mat-grid-tile>
+    <mat-grid-tile class="router">
+        <main class="content-login">
+            <mat-card class="w-80">
+                <mat-card-header>
+                    <ng-container *ngTemplateOutlet="isLogin ? headerLogin : isRegister ? headerRegister : isReset ? headerResetPassword : headerSendEmail"></ng-container>
+                </mat-card-header>
+
+                <mat-card-content class="p-2">
+                    <router-outlet></router-outlet>
+                </mat-card-content>
+        
+                <mat-card-footer>
+                    <footer class="text-center pb-2 mx-4">
+                        <ng-container *ngTemplateOutlet="isLogin ? buttonLogin : isRegister ? buttonRegister : isReset ? buttonResetPassword : buttonSendEmail"></ng-container>
+                    </footer>
+                </mat-card-footer>
+            </mat-card>
+        </main>
+    </mat-grid-tile>
+</mat-grid-list>
+
+<ng-template #headerLogin>
+    <h1 class="text-center w-100 mb-0">Iniciar Sesión</h1>
+</ng-template>
+
+<ng-template #headerRegister>
+    <h1 class="text-center w-100 mb-0">Registro</h1>
+</ng-template>
+
+<ng-template #headerResetPassword>
+    <h1 class="text-center w-100 mb-0">Recuperar Contraseña</h1>
+</ng-template>
+
+<ng-template #headerSendEmail>
+    <h1 class="text-center w-100 mb-0">Enviar correo</h1>
+</ng-template>
+
+<ng-template #buttonLogin>
+    <p class="mb-1"><button mat-raised-button color="primary" [disabled]="disabled$ | async" (click)="onSubmit('login')" class="bg-gradient w-100">Ingresar</button></p>
+    <mat-divider [inset]="true"></mat-divider>
+    <p class="mt-1 mb-0"><button mat-raised-button  color="warn" class="bg-gradient w-100" [routerLink]="'./register'">Registrar</button></p>
+    <p class="m-0 text-end"><a  href="#" [routerLink]="'./send-email'">Olvidaste tu contraseña?</a></p>
+</ng-template>
+
+<ng-template #buttonRegister>
+    <p class="mb-1"><button mat-raised-button color="primary" [disabled]="disabled$ | async" (click)="onSubmit('register')" class="bg-gradient w-100">Registrar</button></p>
+    <mat-divider [inset]="true"></mat-divider>
+    <p class="mt-1 mb-0"><button mat-raised-button color="warn" class="bg-gradient w-100" [routerLink]="'./login'">Regresar</button></p>
+</ng-template>
+
+<ng-template #buttonResetPassword>
+    <p class="mt-1 mb-0"><button mat-raised-button color="warn" class="bg-gradient w-100" >Guardar</button></p>
+</ng-template>
+
+<ng-template #buttonSendEmail>
+    <p class="mt-1 mb-0"><button mat-raised-button color="primary" [disabled]="disabled$ | async" class="bg-gradient w-100" [disabled]="true">Enviar Correo</button></p>
+    <p class="mt-1 mb-0"><button mat-raised-button color="warn" class="bg-gradient w-100" [routerLink]="'./login'">Regresar</button></p>
+</ng-template>

@@ -1,0 +1,64 @@
+<!--    BEGIN TOOLBAR   -->
+<mat-toolbar color="warn">
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon class="icon-display">menu</mat-icon>
+    </button>
+    <mat-menu #menu="matMenu">
+        <button mat-menu-item *ngFor="let item of itemsMenu" (click)="navigateByCategoria(item.idCategoria)">
+          <mat-icon color="warn">{{item.rutaIcono}}</mat-icon>
+          <span>{{item.nombre}}</span>
+        </button>
+      </mat-menu>
+    <img src="assets/img/promart-logo.png" style="height: 100%;" class="img-fluid">
+    <div class="input-group rounded ms-5 ps-5" style="width: 383px">
+        <input type="text" class="form-control rounded-pill" placeholder="Buscar" aria-label="Buscar"/>
+        <button (click)="search()" class="btn btn-md border-0 custom-position">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    <div class="group-button">
+      <button routerLink="/auth/login" mat-icon-button aria-label="Icono de usuario">
+        <mat-icon class="icon-display">location_on</mat-icon>
+      </button>
+      <button routerLink="/auth/login" mat-icon-button aria-label="Icono de usuario">
+        <mat-icon class="icon-display">person</mat-icon>
+      </button>
+      <button routerLink="/auth/login" mat-icon-button aria-label="Icono de usuario">
+        <mat-icon  matBadge="15" class="icon-display">add_shopping_cart</mat-icon>
+      </button>
+    </div>
+</mat-toolbar>
+<!--    END TOOLBAR   -->
+
+<div class="container vh-100">
+  <mdb-carousel [controls]="true" [indicators]="true" [animation]="'fade'">
+    <mdb-carousel-item>
+      <img
+        src="assets/img/dv-slider-home-30122021-20.png"
+        class="d-block w-100"
+        alt="Sunset Over the City"
+      />
+    </mdb-carousel-item>
+  
+    <mdb-carousel-item>
+      <img
+      src="assets/img/dv-slider-home-30122021-11.png"
+        class="d-block w-100"
+        alt="Canyon at Night"
+      />
+    </mdb-carousel-item>
+  
+    <mdb-carousel-item>
+      <img
+        src="assets/img/dv-slider-home-30122021-12.png"
+        class="d-block w-100"
+        alt="Cliff Above a Stormy Sea"
+      />
+    </mdb-carousel-item>
+    
+  </mdb-carousel>
+
+  <img
+  class="d-block w-100"
+    src="assets/img/Cintillo_Desktop_1366x63px.png">
+</div>
